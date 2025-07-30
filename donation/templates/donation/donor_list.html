@@ -1,0 +1,12 @@
+<!-- filepath: c:\Users\vyshn\food_donation\donation\templates\donation\donor_list.html -->
+{% extends 'donation/base.html' %}
+{% block content %}
+  <h2>Donor List</h2>
+  <ul>
+    {% for donation in object_list %}
+      <li>{{ donation.food_item }} - {{ donation.quantity }} (Donor: {{ donation.donor.username }})</li>
+    {% empty %}
+      <li>No donations yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

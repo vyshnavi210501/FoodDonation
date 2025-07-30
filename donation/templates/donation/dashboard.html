@@ -1,0 +1,11 @@
+<!-- donation/templates/donation/dashboard.html -->
+{% extends 'donation/base.html' %}
+
+{% block content %}
+  <h2>Welcome, {{ user.username }}!</h2>
+  <p>This is your dashboard.</p>
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+{% endblock %}
